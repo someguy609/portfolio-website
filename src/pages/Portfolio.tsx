@@ -3,16 +3,17 @@ import Navbar from '../components/Navbar';
 import Section from '../components/Section';
 import TextInputLabel from '../components/TextInputLabel';
 import TextInput from '../components/TextInput';
-import { FaWhatsapp, FaPython } from 'react-icons/fa';
-import { FaGolang } from 'react-icons/fa6';
+import { FaWhatsapp, FaPython, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { IoDocumentText, IoLogoJavascript } from 'react-icons/io5';
 import { DiHtml5, DiCss3, DiReact } from 'react-icons/di';
-import { SiExpress, SiMongodb, SiTypescript } from 'react-icons/si';
 import Portrait from '../assets/portrait.png';
 import CV from '../assets/cv.pdf';
+import { Link } from 'react-router-dom';
+import { MdEmail } from 'react-icons/md';
+import { SiC, SiCplusplus, SiTailwindcss } from 'react-icons/si';
 
 function Portfolio() {
-	const titles = ['software engineer', 'undergrad', 'dumbass'];
+	const titles = ['software engineer', 'undergrad', 'ai enthusiast'];
 	const [index, setIndex] = useState<number>(0);
 	const [changing, setChanging] = useState<boolean>(false);
 
@@ -38,9 +39,9 @@ function Portfolio() {
 				id="home"
 				className="flex items-center w-full min-h-screen"
 			>
-				<div className="flex flex-col items-center gap-4 sm:justify-between sm:flex-row">
+				<div className="flex items-center flex-shrink gap-4 text-center sm:justify-between md:flex-row sm:text-left">
 					<div className="sm:w-1/2">
-						<h1 className="text-5xl font-bold sm:text-6xl">
+						<h1 className="text-5xl font-bold sm:text-4xl md:text-6xl">
 							Hi, I'm
 							<br />{' '}
 							<span className="text-[#064ACB] dark:text-[#40A2E3]">
@@ -58,86 +59,134 @@ function Portfolio() {
 							download="Daniel Adhitthana"
 							className="inline-block mt-4 focus:outline-none"
 						>
-							<button className="flex items-center px-4 py-2 text-white bg-black rounded-full dark:bg-[#064ACB] sm:text-base text-sm">
+							<button className="flex items-center px-4 py-2 text-white bg-black rounded-full dark:bg-[#064ACB] transition hover:bg-[#7745ff] hover:dark:bg-[#d95eff] sm:text-base text-sm">
 								Download CV <IoDocumentText className="ml-2" />
 							</button>
 						</a>
 					</div>
-					<div className="mt-4 sm:mt-0">
-						<div className="absolute lg:w-80 md:w-40 sm:w-36 w-32 bg-gradient-to-tr from-[#064ACB] to-[#92C7CF] aspect-square -z-10" />
-						<div className="mt-2 ml-2 sm:mt-5 sm:ml-5">
-							{/* <div className="bg-[#7743DB] inline-block h-7"> */}
-							<p
-								className={
-									' bg-[#7743DB] inline-block px-1 pt-1 transition text-white sm:text-base text-sm h-7'
-								}
-							>
-								{titles[index]}
-							</p>
-							{/* </div> */}
-							<img
-								src={Portrait}
-								alt="picture"
-								className="border-4 border-[#7743DB] block lg:max-w-96 md:max-w-48 max-w-36"
-							/>
+					<div className="relative justify-end hidden pr-4 mb-48 md:flex">
+						<div className="flex w-full min-h-full sm:mt-0">
+							<div className="absolute mt-2 ml-2 sm:mt-5 sm:ml-5">
+								<p
+									className={
+										' bg-[#7743DB] inline-block px-1 pt-1 transition text-white sm:text-base text-sm h-7'
+									}
+								>
+									{titles[index]}
+								</p>
+								<img
+									src={Portrait}
+									alt="picture"
+									className="border-4 border-[#7743DB] block max-w-48"
+								/>
+							</div>
+							<div className="lg:w-54 md:w-40 sm:w-36 w-24 bg-gradient-to-tr from-[#064ACB] to-[#92C7CF] aspect-square block" />
 						</div>
 					</div>
 				</div>
 			</Section>
+			<Section id="experience">
+				<h1 className="text-4xl font-bold text-center sm:text-left">
+					Experience
+				</h1>
+				<ul className="p-4 mt-4 ml-2 border-l-4 border-black dark:border-white">
+					<li className="mb-4 last:mb-0">
+						<h2 className="text-lg font-semibold lg:text-2xl">
+							Programmer
+						</h2>
+						<h3 className="">Banyubramanta ITS</h3>
+						<p className="text-neutral-500">2023 - now</p>
+						<ul className="mt-2 ml-4 text-sm list-disc text-neutral-400">
+							<li>
+								Developed Banyubramanta’s ROV navigation system
+								and simulation with Nav2, Gazebo, and RViz
+							</li>
+							<li>
+								Preprocess a surplus amount of images for
+								Banyubramanta’s ROV obstacle and goal detection
+							</li>
+						</ul>
+					</li>
+					<li className="mb-4 last:mb-0">
+						<h2 className="text-lg font-semibold lg:text-2xl">
+							Programmer Intern
+						</h2>
+						<h3 className="">Banyubramanta ITS</h3>
+						<p className="text-neutral-500">2023</p>
+						<ul className="mt-2 ml-4 text-sm list-disc text-neutral-400">
+							<li>
+								Developed an ROV and semi-AUV system for team
+								Lele Dumbo's underwater robot.
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</Section>
+			<Section id="education">
+				<h1 className="text-4xl font-bold text-center sm:text-left">
+					Education
+				</h1>
+				<ul className="p-4 mt-4 ml-2 border-l-4 border-black dark:border-white">
+					<li className="mb-4 last:mb-0">
+						<h2 className="text-lg font-semibold lg:text-2xl">
+							Informatics Engineering
+						</h2>
+						<h3 className="">
+							Institut Teknologi Sepuluh Nopember
+						</h3>
+						<p className="text-neutral-500">2023 - now</p>
+						<ul className="text-neutral-400"></ul>
+					</li>
+				</ul>
+			</Section>
 			<Section id="skills">
 				<h1 className="text-4xl font-bold">Skills</h1>
-				<div className="grid sm:grid-cols-8 grid-cols-4 gap-4 mt-4 *:h-full *:w-full">
-					<DiHtml5 />
-					<DiCss3 />
-					<IoLogoJavascript />
-					<SiTypescript />
-					<DiReact />
-					<SiExpress />
-					<SiMongodb />
-					<FaGolang />
-					<FaPython />
+				<div className="grid sm:grid-cols-8 grid-cols-4 gap-4 mt-4 *:h-full *:w-full *:transition">
+					<SiC className="hover:text-blue-500" />
+					<SiCplusplus className="hover:text-blue-500" />
+					<DiHtml5 className="hover:text-blue-500" />
+					<DiCss3 className="hover:text-blue-500" />
+					<IoLogoJavascript className="hover:text-blue-500" />
+					<DiReact className="hover:text-blue-500" />
+					<FaPython className="hover:text-blue-500" />
 				</div>
-			</Section>
-			<Section id="projects">
-				<h1 className="text-4xl font-bold">Projects</h1>
-				<p>none :(</p>
-				<canvas></canvas>
 			</Section>
 			<Section
 				id="contacts"
 				className="py-4 text-white bg-neutral-800 dark:bg-neutral-800"
 			>
-				<div className="flex flex-col items-center sm:justify-between sm:flex-row">
-					<div className="sm:w-1/2">
-						<p>Don't be afraid, contact me!</p>
-						<form>
-							<div className="mt-4">
-								{/* <p>Email</p> */}
-								{/* <input
-									type="email"
-									className="w-full bg-transparent border-b focus:outline-none"
-								/> */}
-								{/* <label htmlFor="email">yo</label> */}
-								<TextInputLabel>Email</TextInputLabel>
-								<TextInput type="email" />
-							</div>
-							<div className="mt-4">
-								<p>Message</p>
-								<textarea className="w-full bg-transparent border-b focus:outline-none" />
-							</div>
-							<button className="w-full p-1 mt-4 bg-black">
-								Submit
-							</button>
-						</form>
-					</div>
-					<div className="my-4 sm:mt-0">
-						<ul className="*:flex *:gap-4">
+				<div className="flex flex-col items-center text-center sm:justify-between sm:flex-row sm:text-left">
+					<div className="flex flex-col items-center sm:w-1/2 sm:block">
+						<p>Don't be afraid, feel free to contact me!</p>
+						<ul className="flex gap-4 mx-auto mt-4 text-3xl">
 							<li>
-								<FaWhatsapp className="text-2xl" />
-								<p>+6281281832612</p>
+								<Link to="https://wa.me/6281281832612">
+									<FaWhatsapp />
+								</Link>
 							</li>
-							<li></li>
+							<li>
+								<Link to="www.linkedin.com/in/daniel-adhitthana">
+									<FaLinkedin />
+								</Link>
+							</li>
+							<li>
+								<Link to="mailto:dadhitthana@gmail.com">
+									<MdEmail />
+								</Link>
+							</li>
+							<li>
+								<Link to="https://github.com/someguy609">
+									<FaGithub />
+								</Link>
+							</li>
 						</ul>
+					</div>
+					<div className="flex flex-col mt-4 text-sm sm:block sm:text-base sm:mt-0 text-neutral-500">
+						<p>This website was made with</p>
+						<div className="flex justify-end gap-2 mx-auto mt-2 text-3xl">
+							<DiReact />
+							<SiTailwindcss />
+						</div>
 					</div>
 				</div>
 			</Section>

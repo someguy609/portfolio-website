@@ -30,7 +30,7 @@ const Section = forwardRef<HTMLDivElement, ISectionProps>((props, ref) => {
 			className={'dark:bg-black dark:text-white ' + props.className}
 			ref={sectionRef}
 		>
-			<div className="w-full max-w-sm p-4 mx-auto lg:max-w-6xl sm:max-w-3xl">
+			<div className="w-full max-w-sm px-4 py-8 mx-auto overflow-hidden sm:px-16 lg:max-w-6xl sm:max-w-3xl">
 				{props.children}
 			</div>
 		</section>

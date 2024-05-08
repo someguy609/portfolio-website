@@ -19,8 +19,8 @@ function Navbar() {
 	}, []);
 
 	return (
-		<nav className="fixed z-10 w-full bg-[#f2f3f3] backdrop-blur-md dark:bg-black">
-			<div className="box-border flex justify-between max-w-6xl p-4 mx-auto">
+		<nav className="fixed z-50 w-full bg-[#f2f3f3] bg-opacity-70 backdrop-blur-md dark:bg-black dark:bg-opacity-40">
+			<div className="box-border flex justify-between max-w-6xl px-8 py-4 mx-auto sm:px-16">
 				<img src={Logo} alt="logo" className="h-8" />
 				<ul className="items-center hidden grid-flow-col gap-4 *:transition *:px-1 *:cursor-pointer sm:grid dark:text-white">
 					{sections.map((val) => (
@@ -38,7 +38,14 @@ function Navbar() {
 				<div className="block sm:hidden">
 					<GiHamburgerMenu className="group" />
 					<ul className="hidden group-focus:block">
-						<li>something</li>
+						{sections.map((val) => (
+							<li
+								className="block dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white"
+								onClick={() => handleScroll(val.id)}
+							>
+								{val.id}
+							</li>
+						))}
 					</ul>
 				</div>
 			</div>

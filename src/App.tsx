@@ -46,7 +46,7 @@ function App() {
 			<Router>
 				<Routes>
 					<Route path="/" element={<Portfolio />} />
-					<Route path="/admin" element={<Admin />} />
+					{/* <Route path="/admin" element={<Admin />} /> */}
 					<Route path="*" element={<NotFound />} />
 				</Routes>
 			</Router>
