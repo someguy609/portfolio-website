@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Section from '../components/Section';
-import TextInputLabel from '../components/TextInputLabel';
-import TextInput from '../components/TextInput';
 import { FaWhatsapp, FaPython, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { IoDocumentText, IoLogoJavascript } from 'react-icons/io5';
 import { DiHtml5, DiCss3, DiReact } from 'react-icons/di';
