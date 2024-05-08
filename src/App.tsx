@@ -37,7 +37,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ThemeProvider from './context/ThemeContext';
 import Portfolio from './pages/Portfolio';
-import Admin from './pages/Admin';
 import NotFound from './pages/NotFound';
 
 function App() {
@@ -46,7 +45,6 @@ function App() {
 			<Router>
 				<Routes>
 					<Route path="/" element={<Portfolio />} />
-					{/* <Route path="/admin" element={<Admin />} /> */}
 					<Route path="*" element={<NotFound />} />
 				</Routes>
 			</Router>
