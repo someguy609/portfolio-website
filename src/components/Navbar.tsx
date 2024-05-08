@@ -3,9 +3,11 @@ import { ThemeContext } from '../context/ThemeContext';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { IoMoon, IoSunny } from 'react-icons/io5';
 import Logo from '../assets/logo.svg';
+// import Dropdown from './Dropdown';
 
 function Navbar() {
 	const [sections, setSections] = useState<Array<HTMLElement>>([]);
+	const [isOpen, setIsOpen] = useState<boolean>(false);
 	const { dark, setDark } = useContext(ThemeContext)!;
 
 	const handleScroll = useCallback((sectionId: string) => {
@@ -13,6 +15,10 @@ function Navbar() {
 			.getElementById(sectionId)
 			?.scrollIntoView({ behavior: 'smooth' });
 	}, []);
+
+	const handleClick = useCallback(() => {
+		setIsOpen(!isOpen);
+	}, [isOpen]);
 
 	useEffect(() => {
 		setSections(Array.from(document.getElementsByTagName('section')));
@@ -35,18 +41,22 @@ function Navbar() {
 						{dark ? <IoMoon /> : <IoSunny />}
 					</li>
 				</ul>
-				<div className="block sm:hidden">
-					<GiHamburgerMenu className="group" />
-					<ul className="hidden group-focus:block">
-						{sections.map((val) => (
-							<li
-								className="block dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white"
-								onClick={() => handleScroll(val.id)}
-							>
-								{val.id}
-							</li>
-						))}
-					</ul>
+				<div className="relative block sm:hidden">
+					<button onClick={handleClick}>
+						<GiHamburgerMenu />
+					</button>
+					{isOpen && (
+						<ul className="absolute right-0 p-2 border rounded bg-[#f2f3f3]">
+							{sections.map((val) => (
+								<li
+									className="block dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white"
+									onClick={() => handleScroll(val.id)}
+								>
+									{val.id}
+								</li>
+							))}
+						</ul>
+					)}
 				</div>
 			</div>
 		</nav>
