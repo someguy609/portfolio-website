@@ -42,11 +42,11 @@ function Navbar() {
 					</li>
 				</ul>
 				<div className="relative block sm:hidden">
-					<button onClick={handleClick}>
+					<button className="dark:text-white" onClick={handleClick}>
 						<GiHamburgerMenu />
 					</button>
 					{isOpen && (
-						<ul className="absolute right-0 p-2 border rounded bg-[#f2f3f3]">
+						<ul className="absolute right-0 p-2 border dark:border-neutral-600 rounded bg-[#f2f3f3] dark:bg-black text-black dark:text-white *:transition *:px-1">
 							{sections.map((val) => (
 								<li
 									className="block dark:hover:bg-white dark:hover:text-black hover:bg-black hover:text-white"
@@ -55,6 +55,14 @@ function Navbar() {
 									{val.id}
 								</li>
 							))}
+							<li
+								onClick={() =>
+									setDark((prev: boolean) => !prev)
+								}
+								className="mt-2"
+							>
+								{dark ? <IoMoon /> : <IoSunny />}
+							</li>
 						</ul>
 					)}
 				</div>
