@@ -8,7 +8,7 @@ import Portrait from '../assets/portrait.png';
 import CV from '../assets/cv.pdf';
 import { Link } from 'react-router-dom';
 import { MdEmail } from 'react-icons/md';
-import { SiC, SiCplusplus, SiTailwindcss } from 'react-icons/si';
+import { SiC, SiCplusplus, SiTailwindcss, SiTypescript } from 'react-icons/si';
 
 function Portfolio() {
 	const titles = ['software engineer', 'undergrad', 'ai enthusiast'];
@@ -145,6 +145,7 @@ function Portfolio() {
 					<DiHtml5 className="hover:text-blue-500" />
 					<DiCss3 className="hover:text-blue-500" />
 					<IoLogoJavascript className="hover:text-blue-500" />
+					<SiTypescript className="hover:text-blue-500" />
 					<DiReact className="hover:text-blue-500" />
 					<FaPython className="hover:text-blue-500" />
 				</div>
