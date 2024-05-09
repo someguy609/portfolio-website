@@ -37,9 +37,9 @@ function Portfolio() {
 				id="home"
 				className="flex items-center w-full min-h-screen"
 			>
-				<div className="flex items-center flex-shrink gap-4 text-center sm:justify-between md:flex-row sm:text-left">
-					<div className="sm:w-1/2">
-						<h1 className="text-5xl font-bold sm:text-4xl md:text-6xl">
+				<div className="flex items-center gap-4 text-center sm:justify-between md:flex-row md:text-left">
+					<div className="md:w-1/2">
+						<h1 className="text-5xl font-bold sm:text-6xl">
 							Hi, I'm
 							<br />{' '}
 							<span className="text-[#064ACB] dark:text-[#40A2E3]">
@@ -62,7 +62,7 @@ function Portfolio() {
 							</button>
 						</a>
 					</div>
-					<div className="relative justify-end hidden pr-4 mb-48 md:flex">
+					<div className="relative justify-end hidden pr-4 mb-48 xl:pr-44 xl:mb-96 lg:pr-32 lg:mb-64 md:flex">
 						<div className="flex w-full min-h-full sm:mt-0">
 							<div className="absolute mt-2 ml-2 sm:mt-5 sm:ml-5">
 								<p
@@ -75,7 +75,7 @@ function Portfolio() {
 								<img
 									src={Portrait}
 									alt="picture"
-									className="border-4 border-[#7743DB] block max-w-48"
+									className="border-4 border-[#7743DB] block xl:max-w-80 lg:max-w-64 max-w-48"
 								/>
 							</div>
 							<div className="lg:w-54 md:w-40 sm:w-36 w-24 bg-gradient-to-tr from-[#064ACB] to-[#92C7CF] aspect-square block" />
